@@ -1,0 +1,39 @@
+Q.1)
+Back Savers is a company that produces backpacks primarily for students. They are considering offering some combination of two different models—the Collegiate and the Mini. Both are made out of the same rip-resistant nylon fabric. Back Savers has a long-term contract with a supplier of the nylon and receives a 5000 square-foot shipment of the material each week. Each Collegiate requires 3 square feet while each Mini requires 2 square feet. The sales forecasts indicate that at most 1000 Collegiates and 1200 Minis can be sold per week. Each Collegiate requires 45 minutes of labor to produce and generates a unit profit of $32. Each Mini requires 40 minutes of labor and generates a unit profit of $24. Back Savers has 35 laborers that each provides 40 hours of labor per week. Management wishes to know what quantity of each type of backpack to produce per week
+a. Clearly define the decision variables
+b. What is the objective function?
+c. What are the constraints?
+d. Write down the full mathematical formulation for this LP problem.
+
+Answer/-
+
+```{r}
+table_1=matrix(c(3,45,1000,32,2,40,1200,24), nrow = 2, ncol = 4, byrow = TRUE)
+
+colnames(table_1)<-(c('Material Required(in sq.ft)', 'Labor(in Minutes)', 'Sales','Profit(Per Unit)'))
+rownames(table_1)<-(c('Collegiate', 'Mini'))
+table_1
+```
+
+expected,
+
+Number of backpacks in Collegiate model category $$=X_c$$
+Number of backpacks in Mini model category $$=X_m$$
+
+(a) Decision Variables as follows: $$X_c\hspace{.2cm} and \hspace{.2cm}X_m$$
+(b) Objective Functions as follows: $$Max\hspace{.1cm}Z\hspace{.2cm}=\hspace{.2cm}32X_c+24X_m$$
+(C) Constraints are like:
+
+1. Material Constraints as :$$3X_c+2X_m\le5000$$
+2. Labor Constraints as : $$45X_c+40X_m\le35*40*60$$
+3. Sales Constraints as :$$X_c\le1000$$
+                     $$X_m\le1200$$
+4. Nonnegativity Constraints are :$$X_c\ge0\hspace{.2cm} and \hspace{.2cm} X_m\ge0$$
+(d) Linear Programming model as :
+$$Max\hspace{.1cm}Z\hspace{.2cm}=\hspace{.2cm}32X_c+24X_m$$
+Restrictions,
+$$3X_c+2X_m\le5000$$
+$$45X_c+40X_m\le35*40*60$$
+$$X_c\le1000$$
+$$X_m\le1200$$
+$$X_c\ge0\hspace{.2cm} and \hspace{.2cm} X_m\ge0$$
